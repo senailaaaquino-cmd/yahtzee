@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yahtzee - Game</title>
+    <link rel="stylesheet" href="game.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="game.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="game-background">
+            <img src="src/imports/First-1/background.jpg" alt="" class="bg-img">
+
+            <!-- Game Header -->
+            <div class="game-header">
+                <div class="header-bg"></div>
+                <div class="progress-bar"></div>
+                <div class="vs-container">
+                    <p class="player-you">You</p>
+                    <p class="player-ai">AI</p>
+                    <div class="vs-logo">
+                        <img src="src/imports/First-1/vs.png" alt="VS">
+                    </div>
+                </div>
+                
+                <!-- Question Mark Icon -->
+                <div class="info-icon">
+                    <div class="info-button">?</div>
+                    <div class="info-dropdown">
+                        <div class="info-dropdown-header">Character Points</div>
+                        <div class="info-item">
+                            <img src="src/imports/First-1/harry.jpg" alt="Harry">
+                            <span>Harry = 6 points</span>
+                        </div>
+                        <div class="info-item">
+                            <img src="src/imports/First-1/hermione.jpg" alt="Hermione">
+                            <span>Hermione = 5 points</span>
+                        </div>
+                        <div class="info-item">
+                            <img src="src/imports/First-1/ron.jpg" alt="Ron">
+                            <span>Ron = 4 points</span>
+                        </div>
+                        <div class="info-item">
+                            <img src="src/imports/First-1/dobby.jpg" alt="Dobby">
+                            <span>Dobby = 3 points</span>
+                        </div>
+                        <div class="info-item">
+                            <img src="src/imports/First-1/dumbledore.jpg" alt="Dumbledore">
+                            <span>Dumbledore = 2 points</span>
+                        </div>
+                        <div class="info-item">
+                            <img src="src/imports/First-1/voldemort.jpg" alt="Voldemort">
+                            <span>Voldemort = 1 point</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Three Dot Menu -->
+                <div class="menu-icon">
+                    <div class="menu-button">⋮</div>
+                    <div class="menu-dropdown">
+                        <div class="menu-item restart-game">🔄 Restart Game</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Character Boxes -->
+            <div class="character-section">
+                <div class="character-box-bg"></div>
+                <p class="instruction-text">Click 'Roll Dice ' to start your turn!</p>
+                <div class="separator-line"></div>
+                
+                <!-- Character Images -->
+                <div class="character-grid">
+                    <div class="character-item">
+                        <img src="src/imports/First-1/questionmark.jpg" alt="Character 1">
+                    </div>
+                    <div class="character-item">
+                        <img src="src/imports/First-1/questionmark.jpg" alt="Character 2">
+                    </div>
+                    <div class="character-item">
+                        <img src="src/imports/First-1/questionmark.jpg" alt="Character 3">
+                    </div>
+                    <div class="character-item">
+                        <img src="src/imports/First-1/questionmark.jpg" alt="Character 4">
+                    </div>
+                    <div class="character-item">
+                        <img src="src/imports/First-1/questionmark.jpg" alt="Character 5">
+                    </div>
+                    <div class="character-item">
+                        <img src="src/imports/First-1/questionmark.jpg" alt="Character 6 - Ron Weasley">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Roll Section -->
+            <div class="roll-section">
+                <div class="roll-section-bg"></div>
+                
+                <!-- Roll Dice Button -->
+                <div class="roll-dice-button">
+                    <div class="roll-dice-bg"></div>
+                    <p class="roll-dice-text">ROLL DICE</p>
+                </div>
+
+                <!-- Rolls Left -->
+                <div class="rolls-left">
+                    <div class="rolls-left-bg"></div>
+                    <p class="rolls-number">3</p>
+                    <p class="rolls-label">Rolls left</p>
+                </div>
+            </div>
+
+            <!-- Score Section -->
+            <div class="score-section">
+                <div class="score-section-bg"></div>
+                
+                <!-- Header -->
+                <div class="score-header">
+                    <img src="src/imports/First-1/target.png" alt="Dart" class="dart-icon">
+                    <p class="score-title">Score Categories</p>
+                </div>
+
+                <!-- Score Categories -->
+                <div class="score-category one-pair">
+                    <div class="category-box"></div>
+                    <p class="category-name">Pair</p>
+                    <p class="category-description">2 matching characters</p>
+                    <div class="category-scores">
+                        <p class="score-label">You</p>
+                        <p class="score-label ai">AI</p>
+                    </div>
+                    <div class="category-line"></div>
+                </div>
+
+                <div class="score-category two-pairs">
+                    <div class="category-box"></div>
+                    <p class="category-name">Two Pairs</p>
+                    <p class="category-description">2 different pairs</p>
+                    <div class="category-scores">
+                        <p class="score-label">You</p>
+                        <p class="score-label ai">AI</p>
+                    </div>
+                    <div class="category-line"></div>
+                </div>
+
+                <div class="score-category three-kind">
+                    <div class="category-box"></div>
+                    <p class="category-name">Three of a Kind</p>
+                    <p class="category-description">3 matching characters</p>
+                    <div class="category-scores">
+                        <p class="score-label">You</p>
+                        <p class="score-label ai">AI</p>
+                    </div>
+                    <div class="category-line"></div>
+                </div>
+
+                <div class="score-category four-kind">
+                    <div class="category-box"></div>
+                    <p class="category-name">Four of a Kind</p>
+                    <p class="category-description">4 matching characters</p>
+                    <div class="category-scores">
+                        <p class="score-label">You</p>
+                        <p class="score-label ai">AI</p>
+                    </div>
+                    <div class="category-line"></div>
+                </div>
+
+                <div class="score-category full-house">
+                    <div class="category-box"></div>
+                    <p class="category-name">Full House</p>
+                    <p class="category-description">3 + 2 matching</p>
+                    <div class="category-scores">
+                        <p class="score-label">You</p>
+                        <p class="score-label ai">AI</p>
+                    </div>
+                    <div class="category-line"></div>
+                </div>
+
+                <div class="score-category small-straight">
+                    <div class="category-box"></div>
+                    <p class="category-name">Small Straight</p>
+                    <p class="category-description">4 in sequence</p>
+                    <div class="category-scores">
+                        <p class="score-label">You</p>
+                        <p class="score-label ai">AI</p>
+                    </div>
+                    <div class="category-line"></div>
+                </div>
+
+                <div class="score-category large-straight">
+                    <div class="category-box"></div>
+                    <p class="category-name">Large Straight</p>
+                    <p class="category-description">5 in sequence</p>
+                    <div class="category-scores">
+                        <p class="score-label">You</p>
+                        <p class="score-label ai">AI</p>
+                    </div>
+                    <div class="category-line"></div>
+                </div>
+
+                <div class="score-category yahtzee">
+                    <div class="category-box"></div>
+                    <p class="category-name">YAHTZEE!</p>
+                    <p class="category-description">5 matching characters</p>
+                    <div class="category-scores">
+                        <p class="score-label">You</p>
+                        <p class="score-label ai">AI</p>
+                    </div>
+                    <div class="category-line"></div>
+                </div>
+
+                <div class="score-category chance">
+                    <div class="category-box"></div>
+                    <p class="category-name">Chance</p>
+                    <p class="category-description">Sum of all dice</p>
+                    <div class="category-scores">
+                        <p class="score-label">You</p>
+                        <p class="score-label ai">AI</p>
+                    </div>
+                    <div class="category-line"></div>
+                </div>
+
+                <!-- Footer Text -->
+                <div class="footer-line"></div>
+                <p class="footer-text">Choose wisely! Each category can only be<br>used once.</p>
+                <p class="footer-subtext">Higher scores = More stars!</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

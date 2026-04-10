@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yahtzee - Hold State</title>
+    <link rel="stylesheet" href="game-hold.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="game-background">
+            <img src="src/imports/First-1/cf7800f1b4fc7a8755e265a47fb6721c122320ca.png" alt="" class="bg-img">
+
+            <!-- Game Header -->
+            <div class="game-header">
+                <div class="header-bg"></div>
+                <div class="progress-bar"></div>
+                <div class="vs-container">
+                    <p class="player-you">You</p>
+                    <p class="player-ai">AI</p>
+                    <div class="vs-logo">
+                        <img src="src/imports/First-1/76acd307a2d3e8e77fd7bdc3a47b490fab3c5e78.png" alt="VS">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Character Boxes with Hold State -->
+            <div class="character-section">
+                <div class="character-box-bg"></div>
+                <p class="instruction-text">Click 'Roll Dice ' to start your turn!</p>
+                <div class="separator-line"></div>
+                
+                <!-- Character Images with TAP TO HOLD -->
+                <div class="character-grid">
+                    <div class="character-wrapper">
+                        <div class="character-item hold-active">
+                            <img src="src/imports/First-1/239c4ecd753404d9bb5b57e70a503b8995032522.png" alt="Character 1">
+                        </div>
+                        <p class="hold-label">TAP TO HOLD</p>
+                    </div>
+                    <div class="character-wrapper">
+                        <div class="character-item hold-active">
+                            <img src="src/imports/First-1/239c4ecd753404d9bb5b57e70a503b8995032522.png" alt="Character 2">
+                        </div>
+                        <p class="hold-label">TAP TO HOLD</p>
+                    </div>
+                    <div class="character-wrapper">
+                        <div class="character-item hold-active">
+                            <img src="src/imports/First-1/239c4ecd753404d9bb5b57e70a503b8995032522.png" alt="Character 3">
+                        </div>
+                        <p class="hold-label">TAP TO HOLD</p>
+                    </div>
+                    <div class="character-wrapper">
+                        <div class="character-item hold-active">
+                            <img src="src/imports/First-1/239c4ecd753404d9bb5b57e70a503b8995032522.png" alt="Character 4">
+                        </div>
+                        <p class="hold-label">TAP TO HOLD</p>
+                    </div>
+                    <div class="character-wrapper">
+                        <div class="character-item">
+                            <img src="src/imports/First-1/1e98ec9d96b7c5936204573e9c2f007c49bf108d.png" alt="Character 5">
+                        </div>
+                        <p class="hold-label">TAP TO HOLD</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Roll Section with Play Button -->
+            <div class="roll-section">
+                <div class="roll-section-bg"></div>
+                
+                <!-- RE-ROLL Button -->
+                <div class="reroll-button">
+                    <div class="reroll-bg"></div>
+                    <p class="reroll-text">RE-ROLL (0)</p>
+                </div>
+
+                <!-- PLAY Button -->
+                <div class="play-button">
+                    <div class="play-bg"></div>
+                    <p class="play-text">PLAY</p>
+                </div>
+
+                <!-- Rolls Left -->
+                <div class="rolls-left">
+                    <div class="rolls-left-bg"></div>
+                    <p class="rolls-number">0</p>
+                    <p class="rolls-label">Rolls left</p>
+                </div>
+            </div>
+
+            <!-- Score Section (Same as game.html) -->
+            <div class="score-section">
+                <div class="score-section-bg"></div>
+                
+                <!-- Header -->
+                <div class="score-header">
+                    <img src="src/imports/First-1/a998b48431ee79de4d061e6970a7090c9d4f8b3b.png" alt="Dart" class="dart-icon">
+                    <p class="score-title">Score Categories</p>
+                </div>
+
+                <!-- Score Categories -->
+                <div class="score-category">
+                    <div class="category-box"></div>
+                    <p class="category-name">Pair</p>
+                    <p class="category-description">2 matching characters</p>
+                    <div class="category-scores">
+                        <p class="score-label">You</p>
+                        <p class="score-label ai">AI</p>
+                    </div>
+                    <div class="category-line"></div>
+                </div>
+
+                <div class="score-category two-pairs">
+                    <div class="category-box"></div>
+                    <p class="category-name">Two Pairs</p>
+                    <p class="category-description">2 different pairs</p>
+                    <div class="category-scores">
+                        <p class="score-label">You</p>
+                        <p class="score-label ai">AI</p>
+                    </div>
+                    <div class="category-line"></div>
+                </div>
+
+                <div class="score-category three-kind">
+                    <div class="category-box"></div>
+                    <p class="category-name">Three of a Kind</p>
+                    <p class="category-description">3 matching characters</p>
+                    <div class="category-scores">
+                        <p class="score-label">You</p>
+                        <p class="score-label ai">AI</p>
+                    </div>
+                    <div class="category-line"></div>
+                </div>
+
+                <div class="score-category four-kind">
+                    <div class="category-box"></div>
+                    <p class="category-name">Four of a Kind</p>
+                    <p class="category-description">4 matching characters</p>
+                    <div class="category-scores">
+                        <p class="score-label">You</p>
+                        <p class="score-label ai">AI</p>
+                    </div>
+                    <div class="category-line"></div>
+                </div>
+
+                <div class="score-category full-house">
+                    <div class="category-box"></div>
+                    <p class="category-name">Full House</p>
+                    <p class="category-description">3 + 2 matching</p>
+                    <div class="category-scores">
+                        <p class="score-label">You</p>
+                        <p class="score-label ai">AI</p>
+                    </div>
+                    <div class="category-line"></div>
+                </div>
+
+                <div class="score-category small-straight">
+                    <div class="category-box"></div>
+                    <p class="category-name">Small Straight</p>
+                    <p class="category-description">4 in sequence</p>
+                    <div class="category-scores">
+                        <p class="score-label">You</p>
+                        <p class="score-label ai">AI</p>
+                    </div>
+                    <div class="category-line"></div>
+                </div>
+
+                <div class="score-category large-straight">
+                    <div class="category-box"></div>
+                    <p class="category-name">Large Straight</p>
+                    <p class="category-description">5 in sequence</p>
+                    <div class="category-scores">
+                        <p class="score-label">You</p>
+                        <p class="score-label ai">AI</p>
+                    </div>
+                    <div class="category-line"></div>
+                </div>
+
+                <div class="score-category yahtzee">
+                    <div class="category-box"></div>
+                    <p class="category-name">YAHTZEE!</p>
+                    <p class="category-description">5 matching characters</p>
+                    <div class="category-scores">
+                        <p class="score-label">You</p>
+                        <p class="score-label ai">AI</p>
+                    </div>
+                    <div class="category-line"></div>
+                </div>
+
+                <div class="score-category chance">
+                    <div class="category-box"></div>
+                    <p class="category-name">Chance</p>
+                    <p class="category-description">Sum of all dice</p>
+                    <div class="category-scores">
+                        <p class="score-label">You</p>
+                        <p class="score-label ai">AI</p>
+                    </div>
+                    <div class="category-line"></div>
+                </div>
+
+                <!-- Footer Text -->
+                <div class="footer-line"></div>
+                <p class="footer-text">Choose wisely! Each category can only be<br>used once.</p>
+                <p class="footer-subtext">Higher scores = More stars!</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

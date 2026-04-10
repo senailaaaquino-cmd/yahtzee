@@ -1,0 +1,601 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #1a1a2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    position: relative;
+    width: 700px;
+    height: 840px;
+}
+
+.game-background {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.bg-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    border-radius: 20px;
+}
+
+/* Game Header */
+.game-header {
+    position: absolute;
+    left: 20px;
+    top: 17px;
+    width: 658px;
+    height: 83px;
+}
+
+.header-bg {
+    position: absolute;
+    inset: -2px;
+    background: white;
+    border: 2px solid black;
+    border-radius: 12px;
+}
+
+.progress-bar {
+    position: absolute;
+    left: 22.21px;
+    top: 63px;
+    width: 613.578px;
+    height: 6px;
+    background: linear-gradient(to right, 
+        #34c759 0%, 
+        #34c759 5%, 
+        #0088ff 10%, 
+        #0088ff 18.127%, 
+        #dfdfdf 18.127%, 
+        #dfdfdf 100%);
+    border-radius: 10px;
+}
+
+.vs-container {
+    position: absolute;
+    left: 209px;
+    top: 15px;
+    width: 254px;
+    height: 39px;
+    border: 1px solid #0062ff;
+    border-radius: 50px;
+}
+
+.player-you {
+    position: absolute;
+    left: 8px;
+    top: 12px;
+    font-weight: 600;
+    font-size: 10px;
+    color: #0062ff;
+    white-space: nowrap;
+}
+
+.player-ai {
+    position: absolute;
+    left: 234px;
+    top: 12px;
+    font-weight: 600;
+    font-size: 10px;
+    color: #7b53ec;
+    white-space: nowrap;
+}
+
+.vs-logo {
+    position: absolute;
+    left: 116px;
+    top: 5px;
+    width: 31px;
+    height: 28px;
+    overflow: hidden;
+}
+
+.vs-logo img {
+    width: 100%;
+    height: 106.52%;
+    object-fit: cover;
+}
+
+/* Stage Label */
+.stage-label {
+    position: absolute;
+    left: 35.27px;
+    top: 59px;
+    width: 63.857px;
+}
+
+.stage-label p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    color: black;
+}
+
+/* Info Icon (Question Mark) */
+.info-icon {
+    position: absolute;
+    right: 50px;
+    top: 15px;
+    z-index: 10;
+}
+
+.info-button {
+    width: 32px;
+    height: 32px;
+    background: #0062ff;
+    border: 2px solid black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 800;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.info-button:hover {
+    background: #0052d4;
+    transform: scale(1.05);
+}
+
+.info-dropdown {
+    position: absolute;
+    top: 38px;
+    right: 0;
+    width: 200px;
+    background: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.info-dropdown.show {
+    display: block;
+}
+
+.info-dropdown-header {
+    background: #0062ff;
+    color: white;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 8px 12px;
+    text-align: center;
+    border-bottom: 2px solid black;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 12px;
+    border-bottom: 1px solid #e0e0e0;
+    transition: background 0.2s ease;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-item:hover {
+    background: #f5f5f5;
+}
+
+.info-item img {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid black;
+    object-fit: cover;
+}
+
+.info-item span {
+    font-weight: 600;
+    font-size: 11px;
+    color: black;
+}
+
+/* Menu Icon (Three Dots) */
+.menu-icon {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    z-index: 10;
+}
+
+.menu-button {
+    width: 32px;
+    height: 32px;
+    background: #7b53ec;
+    border: 2px solid black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 800;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+    line-height: 1;
+}
+
+.menu-button:hover {
+    background: #6841cc;
+    transform: scale(1.05);
+}
+
+.menu-dropdown {
+    position: absolute;
+    top: 38px;
+    right: 0;
+    width: 160px;
+    background: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.menu-dropdown.show {
+    display: block;
+}
+
+.menu-item {
+    padding: 10px 15px;
+    font-weight: 600;
+    font-size: 12px;
+    color: black;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    user-select: none;
+}
+
+.menu-item:hover {
+    background: #f5f5f5;
+}
+
+.menu-item.restart-game:hover {
+    background: #fff0f0;
+    color: #d32f2f;
+}
+
+/* Character Section */
+.character-section {
+    position: absolute;
+    left: 20px;
+    top: 121px;
+    width: 402px;
+    height: 137px;
+}
+
+.character-box-bg {
+    position: absolute;
+    inset: 0;
+    background: white;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.instruction-text {
+    position: absolute;
+    left: 107.05px;
+    top: 107.13px;
+    width: 182.21px;
+    font-style: italic;
+    font-size: 10px;
+    color: black;
+}
+
+.separator-line {
+    position: absolute;
+    left: 19.36px;
+    top: 95.8px;
+    width: 356.447px;
+    height: 1px;
+    background: black;
+}
+
+.character-grid {
+    position: absolute;
+    left: 37px;
+    top: 25px;
+    display: flex;
+    gap: 13px;
+}
+
+.character-item {
+    width: 48.41px;
+    height: 48.41px;
+    border-radius: 10px;
+    border: 2px solid black;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+.character-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Roll Section */
+.roll-section {
+    position: absolute;
+    left: 20px;
+    top: 275px;
+    width: 402px;
+    height: 194px;
+}
+
+.roll-section-bg {
+    position: absolute;
+    inset: 0;
+    background: white;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+/* Roll Dice Button */
+.roll-dice-button {
+    position: absolute;
+    left: 85.41px;
+    top: 32px;
+}
+
+.roll-dice-bg {
+    position: absolute;
+    width: 226.623px;
+    height: 65px;
+    background: linear-gradient(to right, #00c0e8 14.909%, #0062ff 59.621%);
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.roll-dice-text {
+    position: absolute;
+    left: 65.59px;
+    top: 23px;
+    width: 95.66px;
+    font-weight: 800;
+    font-size: 16px;
+    color: white;
+}
+
+/* Rolls Left */
+.rolls-left {
+    position: absolute;
+    left: 154.88px;
+    top: 116px;
+}
+
+.rolls-left-bg {
+    position: absolute;
+    width: 85.411px;
+    height: 55px;
+    background: black;
+    border-radius: 10px;
+}
+
+.rolls-number {
+    position: absolute;
+    left: 37.58px;
+    top: 11px;
+    width: 12.527px;
+    font-weight: 800;
+    font-size: 16px;
+    color: white;
+}
+
+.rolls-label {
+    position: absolute;
+    left: 25.05px;
+    top: 33px;
+    width: 43.275px;
+    font-weight: 700;
+    font-size: 8px;
+    color: white;
+}
+
+/* Score Section */
+.score-section {
+    position: absolute;
+    left: 438px;
+    top: 121px;
+    width: 243.326px;
+    height: 698px;
+}
+
+.score-section-bg {
+    position: absolute;
+    inset: 0;
+    background: white;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.score-header {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.dart-icon {
+    width: 29px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.score-title {
+    font-weight: 800;
+    font-size: 16px;
+    color: black;
+}
+
+/* Score Categories */
+.score-category {
+    position: absolute;
+    width: 208.393px;
+    height: 53.858px;
+}
+
+.score-category.one-pair {
+    left: 18.07px;
+    top: 51.7px;
+}
+
+.score-category.two-pairs {
+    left: 18.07px;
+    top: 112.02px;
+}
+
+.score-category.three-kind {
+    left: 18.07px;
+    top: 173.42px;
+}
+
+.score-category.four-kind {
+    left: 18.07px;
+    top: 233.74px;
+}
+
+.score-category.full-house {
+    left: 18.07px;
+    top: 294.06px;
+}
+
+.score-category.small-straight {
+    left: 18.07px;
+    top: 355.46px;
+}
+
+.score-category.large-straight {
+    left: 18.07px;
+    top: 415.78px;
+}
+
+.score-category.yahtzee {
+    left: 18.07px;
+    top: 477.18px;
+}
+
+.score-category.chance {
+    left: 16.86px;
+    top: 537.5px;
+}
+
+.category-box {
+    position: absolute;
+    inset: 0;
+    background: white;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.category-name {
+    position: absolute;
+    left: 18.07px;
+    top: 11.85px;
+    font-weight: 800;
+    font-size: 13px;
+    color: black;
+}
+
+.category-description {
+    position: absolute;
+    left: 18.07px;
+    top: 29.09px;
+    font-weight: 500;
+    font-size: 7px;
+    color: black;
+}
+
+.category-scores {
+    position: absolute;
+    right: 18px;
+    top: 11.85px;
+    display: flex;
+    gap: 25px;
+}
+
+.score-label {
+    font-weight: 500;
+    font-size: 11px;
+    color: black;
+}
+
+.category-line {
+    position: absolute;
+    right: 0;
+    top: 29.09px;
+    width: 7.228px;
+    height: 1px;
+    background: black;
+}
+
+/* Footer */
+.footer-line {
+    position: absolute;
+    left: 16.86px;
+    top: 616.14px;
+    width: 209.598px;
+    height: 1px;
+    background: black;
+}
+
+.footer-text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 631.22px;
+    width: 198.757px;
+    font-weight: 600;
+    font-size: 8px;
+    color: black;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.footer-subtext {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 667.84px;
+    width: 130.095px;
+    font-weight: 600;
+    font-size: 8px;
+    color: black;
+    text-align: center;
+}

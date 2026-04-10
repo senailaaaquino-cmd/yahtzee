@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: auto;
+    padding: 20px;
+}
+
+.container {
+    position: relative;
+    width: 692px;
+    height: 850px;
+}
+
+/* Background Image */
+.background-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 692px;
+    height: 850px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.background-img {
+    position: absolute;
+    height: 100%;
+    left: -9.79%;
+    top: 0;
+    width: 113.32%;
+    max-width: none;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+/* Start Button */
+.start-button {
+    position: absolute;
+    left: 198px;
+    top: 695px;
+    width: 296px;
+    height: 70px;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.start-button:hover {
+    transform: scale(1.05);
+}
+
+.start-button:active {
+    transform: scale(0.95);
+}
+
+.start-button-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    pointer-events: none;
+}
